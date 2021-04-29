@@ -65,10 +65,18 @@ app.get('/new', (req, res) => {
         'new.ejs'
     )
 })
-
+// Post New Show
 app.post('/', (req, res)=>{
     Show.create(req.body, (error, createdShow)=>{
         res.redirect('/')
+    })
+})
+
+app.get('/:id', (req, res) => {
+    Show.findById(req.params.id, (error, foundShow) => {
+      res.render('show.ejs', {
+        show: foundShow
+      })
     })
 })
 

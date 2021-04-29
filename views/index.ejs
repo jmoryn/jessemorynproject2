@@ -14,12 +14,12 @@
             <!-- loop to display show info on index -->
             <% for (let i = 0; i < shows.length; i++){ %>
                 <li>
-                    <img src='<%=shows[i].image%>'>
-                    <%=shows[i].name%>
+                    <a href="/<%=shows[i].id%>">
+                        <%=shows[i].name%>
+                    </a>
                     <%=shows[i].location%>
                     <%=shows[i].time%>
                     $<%=shows[i].price%>
-                    <%=shows[i].description%>
                 </li>
              <% } %>
         </ul>
