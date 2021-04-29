@@ -51,7 +51,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //localhost:3000
 
 const Show = require('./models/shows.js')
-
+// Index
 app.get('/' , (req, res) => {
     Show.find({}, (error, allShows) => {
         res.render('index.ejs', {
@@ -59,11 +59,17 @@ app.get('/' , (req, res) => {
         })
     })
 });
-
+// New
 app.get('/new', (req, res) => {
     res.render(
         'new.ejs'
     )
+})
+
+app.post('/', (req, res)=>{
+    Show.create(req.body, (error, createdShow)=>{
+        res.redirect('/')
+    })
 })
 
 //___________________

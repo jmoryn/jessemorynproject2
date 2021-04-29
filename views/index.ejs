@@ -7,5 +7,17 @@
     </head>
     <body>
         <h1>GoToShow</h1>
+        <ul>
+            <% for (let i = 0; i < shows.length; i++){ %>
+                <li>
+                    <img src='<%=shows[i].image%>'>
+                    <%=shows[i].name%>
+                    <%=shows[i].location%>
+                    <%=shows[i].time%>
+                    $<%=shows[i].price%>
+                    <%=shows[i].description%>
+                </li>
+             <% } %>
+        </ul>
     </body>
 </html>
