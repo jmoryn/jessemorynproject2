@@ -49,9 +49,22 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
+
+const Show = require('./models/shows.js')
+
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+    Show.find({}, (error, allShows) => {
+        res.render('index.ejs', {
+            shows: allShows
+        })
+    })
 });
+
+app.get('/new', (req, res) => {
+    res.render(
+        'views/new.ejs'
+    )
+})
 
 //___________________
 //Listener
