@@ -29,7 +29,7 @@ shows.get('/:id/edit', (req, res)=>{
 // Delete
 shows.delete('/:id', (req, res) => {
   Show.findByIdAndRemove(req.params.id, (err, deletedShow) => {
-    res.redirect('/')
+    res.redirect('/shows')
   })
 })
 
@@ -46,14 +46,14 @@ shows.get('/:id', (req, res) => {
 // Update
 shows.put('/:id', (req, res)=>{
     Show.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
-        res.redirect('/' + req.params.id)
+        res.redirect('/shows/' + req.params.id)
     })
 })
 
 // Create
 shows.post('/', (req, res)=>{
     Show.create(req.body, (error, createdShow)=>{
-        res.redirect('/')
+        res.redirect('/shows')
     })
 })
 

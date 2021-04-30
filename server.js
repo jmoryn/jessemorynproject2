@@ -58,11 +58,16 @@ app.use(
 //Controllers
 //___________________
 const showsController = require('./controllers/shows.js')
-app.use('/', showsController)
+app.use('/shows', showsController)
 const userController = require('./controllers/users.js')
 app.use('/users', userController)
 const sessionsController = require('./controllers/sessions.js')
 app.use('/sessions', sessionsController)
+
+// Home Route
+app.get('/', (req, res) => {
+  res.redirect('/shows')
+})
 //___________________
 //Listener
 //___________________

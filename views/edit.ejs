@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1>Edit Show</h1>
-        <form action="/<%-show.id%>?_method=PUT" method="POST">
+        <form action="/shows/<%-show.id%>?_method=PUT" method="POST">
             Name: <input type="text" name="name" value="<%=show.name%>"/><br/>
             Location: <input type="text" name="location" value="<%=show.location%>"/><br/>
             Time: <input type="text" name="time" value="<%=show.time%>"/><br/>
@@ -15,5 +15,8 @@
             Image Link: <input type="text" name="image" value="<%=show.image%>"/><br/>
             <input type="submit" value="Submit Changes"/>
         </form>
+        <button type="button">
+            <a href="/shows">Back to Home</a>
+        </button>
     </body>
 </html>
