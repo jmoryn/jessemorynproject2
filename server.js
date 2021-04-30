@@ -71,12 +71,26 @@ app.post('/', (req, res)=>{
         res.redirect('/')
     })
 })
-
+// Edit
+app.get('/:id/edit', (req, res)=>{
+    Show.findById(req.params.id, (err, foundShow)=>{
+        res.render('edit.ejs', {
+            show: foundShow,
+        })
+    })
+})
+// Show
 app.get('/:id', (req, res) => {
     Show.findById(req.params.id, (error, foundShow) => {
       res.render('show.ejs', {
         show: foundShow
       })
+    })
+})
+// Update
+app.put('/:id', (req, res)=>{
+    Show.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
+        res.redirect('/' + req.params.id)
     })
 })
 
