@@ -8,8 +8,19 @@
     <body>
         <h1>GoToShow</h1>
         <a href="/new"><button type="submit">Add a Show</button></a>
-        <a href="/users/new"><button type="submit">Sign Up</button></a>
         <ul>
+            <% if (currentUser) { %>
+                <li>Welcome, <%= currentUser.username %>!</li>
+                <li>
+                    <form action="/sessions?_method=DELETE" method="POST">
+                        <input type="submit" value="Log Out" />
+                    </form>
+                </li>
+            <% } else { %>
+                <li><a href="/users/new">Sign Up</a> </li>
+                <li><a href="/sessions/new">Log In</a> </li>
+            <% } %>
+        </ul>
             <!-- display newest show first -->
             <%shows.reverse()%>
             <!-- loop to display show info on index -->

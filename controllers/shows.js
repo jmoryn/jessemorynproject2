@@ -10,7 +10,9 @@ const Show = require('../models/shows.js')
 // New
 shows.get('/new', (req, res) => {
     res.render(
-        'new.ejs'
+        'new.ejs', {
+            currentUser: req.session.currentUser
+        }
     )
 })
 
@@ -19,6 +21,7 @@ shows.get('/:id/edit', (req, res)=>{
     Show.findById(req.params.id, (err, foundShow)=>{
         res.render('edit.ejs', {
             show: foundShow,
+            currentUser: req.session.currentUser
         })
     })
 })
@@ -34,7 +37,8 @@ shows.delete('/:id', (req, res) => {
 shows.get('/:id', (req, res) => {
     Show.findById(req.params.id, (error, foundShow) => {
       res.render('show.ejs', {
-        show: foundShow
+        show: foundShow,
+        currentUser: req.session.currentUser
       })
     })
 })
@@ -57,7 +61,8 @@ shows.post('/', (req, res)=>{
 shows.get('/', (req, res) => {
     Show.find({}, (error, allShows) => {
         res.render('index.ejs', {
-            shows: allShows
+            shows: allShows,
+            currentUser: req.session.currentUser
         })
     })
 });
