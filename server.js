@@ -45,60 +45,7 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
-//___________________
-// Routes
-//___________________
-//localhost:3000
 
-const Show = require('./models/shows.js')
-// Index
-app.get('/' , (req, res) => {
-    Show.find({}, (error, allShows) => {
-        res.render('index.ejs', {
-            shows: allShows
-        })
-    })
-});
-// New
-app.get('/new', (req, res) => {
-    res.render(
-        'new.ejs'
-    )
-})
-// Post New Show
-app.post('/', (req, res)=>{
-    Show.create(req.body, (error, createdShow)=>{
-        res.redirect('/')
-    })
-})
-// Edit
-app.get('/:id/edit', (req, res)=>{
-    Show.findById(req.params.id, (err, foundShow)=>{
-        res.render('edit.ejs', {
-            show: foundShow,
-        })
-    })
-})
-// Show
-app.get('/:id', (req, res) => {
-    Show.findById(req.params.id, (error, foundShow) => {
-      res.render('show.ejs', {
-        show: foundShow
-      })
-    })
-})
-// Update
-app.put('/:id', (req, res)=>{
-    Show.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
-        res.redirect('/' + req.params.id)
-    })
-})
-// Delete
-app.delete('/:id', (req, res) => {
-  Show.findByIdAndRemove(req.params.id, (err, deletedShow) => {
-    res.redirect('/')
-  })
-})
 //___________________
 //Listener
 //___________________
