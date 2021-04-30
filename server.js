@@ -93,7 +93,12 @@ app.put('/:id', (req, res)=>{
         res.redirect('/' + req.params.id)
     })
 })
-
+// Delete
+app.delete('/:id', (req, res) => {
+  Show.findByIdAndRemove(req.params.id, (err, deletedShow) => {
+    res.redirect('/')
+  })
+})
 //___________________
 //Listener
 //___________________

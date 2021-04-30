@@ -12,6 +12,9 @@
         $<%=show.price%>
         <%=show.description%>
         <a href="/<%=show.id%>/edit"><button type="submit">Edit</button></a>
+        <form action="/<%=show._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE"/>
+        </form>
         <a href="/"><button type="submit">Back to Home</button></a>
     </body>
 </html>
