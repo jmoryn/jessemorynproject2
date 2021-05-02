@@ -3,19 +3,21 @@
     <head>
         <meta charset="utf-8">
         <title>New Show</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../styles.css">
     </head>
     <body>
-        <h1>Add a Show</h1>
-        <form action="/shows" method="POST">
-            Name: <input type="text" name="name"/><br/>
-            Location: <input type="text" name="location"/><br/>
-            Time: <input type="datetime-local" name="time" min="<%Date.now()%>" /><br/>
-            Price: <input type="number" name="price"/><br/>
-            Description: <input type="text" name="description"/><br/>
-            Image Link: <input type="text" name="image"/><br/>
-            <input type="submit" value="Add Show"/>
-        </form>
-        <a href="/shows"><button type="submit">Back to Home</button></a>
+        <div class="container">
+            <h1>Add a Show</h1>
+            <form action="/shows" method="POST">
+                Name: <input type="text" name="name"/><br/>
+                Location: <input type="text" name="location"/><br/>
+                Time: <input type="datetime-local" name="time" min="<%Date.now()%>" /><br/>
+                Price: <input type="number" name="price"/><br/>
+                Description: <input type="text" name="description"/><br/>
+                Image Link: <input type="text" name="image"/><br/>
+                <input type="submit" value="Add Show"/>
+            </form>
+            <a href="/shows"><button type="submit">Back to Home</button></a>
+            </div>
     </body>
 </html>

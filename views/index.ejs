@@ -3,37 +3,39 @@
     <head>
         <meta charset="utf-8">
         <title>GoToShow</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <h1>GoToShow</h1>
-        <a href="/shows/new"><button type="submit">Add a Show</button></a>
-        <ul>
-            <% if (currentUser) { %>
-                <li>Welcome, <%= currentUser.username %>!</li>
-                <li>
-                    <form action="/sessions?_method=DELETE" method="POST">
-                        <input type="submit" value="Log Out" />
-                    </form>
-                </li>
-            <% } else { %>
-                <li><a href="/users/new">Sign Up</a> </li>
-                <li><a href="/sessions/new">Log In</a> </li>
-            <% } %>
+        <div class="container">
+            <h1>GoToShow</h1>
+            <a href="/shows/new"><button type="submit">Add a Show</button></a>
+            <ul>
+                <% if (currentUser) { %>
+                    <li>Welcome, <%= currentUser.username %>!</li>
+                    <li>
+                        <form action="/sessions?_method=DELETE" method="POST">
+                            <input type="submit" value="Log Out" />
+                        </form>
+                    </li>
+                <% } else { %>
+                    <li><a href="/users/new">Sign Up</a> </li>
+                    <li><a href="/sessions/new">Log In</a> </li>
+                <% } %>
 
-            <!-- display newest show first -->
-            <%shows.reverse()%>
-            <!-- loop to display show info on index -->
-            <% for (let i = 0; i < shows.length; i++){ %>
-                <li>
-                    <a href="/shows/<%=shows[i].id%>">
-                        <%=shows[i].name%>
-                    </a>
-                    <%=shows[i].location%>
-                    <%=shows[i].time%>
-                    $<%=shows[i].price%>
-                </li>
-             <% } %>
-        </ul>
+                <!-- display newest show first -->
+                <%shows.reverse()%>
+                <!-- loop to display show info on index -->
+                <% for (let i = 0; i < shows.length; i++){ %>
+                    <li>
+                        <a href="/shows/<%=shows[i].id%>">
+                            <%=shows[i].name%>
+                        </a>
+                        <%=shows[i].location%>
+                        <%=shows[i].time%>
+                        $<%=shows[i].price%>
+                    </li>
+                 <% } %>
+            </ul>
+        </div>
     </body>
 </html>
