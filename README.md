@@ -16,10 +16,12 @@ Another issue was when I decided to change my home route from / to /shows/. Goin
 Being relatively new to forms, I also struggled a few times with form validation and trying to match the data that is input to the data that is displayed on the page. One of my greatest barriers has been figuring out how to set the minimum date to today - little stuff like that. It's likely that I will need to change how I receive the data in question, instead of continuing to use the date and time input types in my HTML.
 
 <h2>Potential Future Additions</h2>
--Greatly improve CSS
--Change UI so more shows can appear on home page
--Make it so users can only alter/delete shows that they have added
--Change the date/time to a more readable format from how the HTML input field displays is
--Add google maps to show pages that pins the venue for the show
--Sort shows by price, date (soonest first), Venue and more
--Add email to user data to allow for marketing or notifications
+<ul>
+<li>Greatly improve CSS</li>
+<li>Change UI so more shows can appear on home page</li>
+<li>Make it so users can only alter/delete shows that they have added</li>
+<li>Change the date/time to a more readable format from how the HTML input field displays is</li>
+<li>Add google maps to show pages that pins the venue for the show</li>
+<li>Sort shows by price, date (soonest first), Venue and more</li>
+<li>Add email to user data to allow for marketing or notifications</li>
+</ul>
