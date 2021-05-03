@@ -12,7 +12,8 @@
             <form class="show-form" action="/shows/<%-show.id%>?_method=PUT" method="POST">
                 Name: <input type="text" name="name" value="<%=show.name%>"/><br/>
                 Location: <input type="text" name="location" value="<%=show.location%>"/><br/>
-                Time: <input type="datetime-local" name="time" value="<%=show.time%>"/><br/>
+                Date: <input type="date" name="date" value="<%=show.date%>"/><br/>
+                Time: <input type="time" name="time" value="<%=show.time%>"/><br/>
                 Price: <input type="number" name="price" value="<%=show.price%>"/><br/>
                 Description: <input type="text" name="description" value="<%=show.description%>"/><br/>
                 Image Link: <input type="text" name="image" value="<%=show.image%>"/><br/>

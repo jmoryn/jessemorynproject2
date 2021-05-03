@@ -45,7 +45,9 @@ body {
 h1 {
     color: var(--three);
 }
-
+h4 {
+    color: var(--five);
+}
 .home-show {
     width: 85%;
     color: var(--five);

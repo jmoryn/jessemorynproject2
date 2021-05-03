@@ -1,6 +1,13 @@
 const express = require('express')
 const shows = express.Router()
 const Show = require('../models/shows.js')
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next()
+  } else {
+    res.redirect('/sessions/new')
+  }
+}
 
 //___________________
 // Routes
@@ -8,7 +15,7 @@ const Show = require('../models/shows.js')
 //localhost:3000
 
 // New
-shows.get('/new', (req, res) => {
+shows.get('/new', isAuthenticated, (req, res) => {
     res.render(
         'new.ejs', {
             currentUser: req.session.currentUser
@@ -17,7 +24,7 @@ shows.get('/new', (req, res) => {
 })
 
 // Edit
-shows.get('/:id/edit', (req, res)=>{
+shows.get('/:id/edit', isAuthenticated, (req, res)=>{
     Show.findById(req.params.id, (err, foundShow)=>{
         res.render('edit.ejs', {
             show: foundShow,
@@ -27,7 +34,7 @@ shows.get('/:id/edit', (req, res)=>{
 })
 
 // Delete
-shows.delete('/:id', (req, res) => {
+shows.delete('/:id', isAuthenticated, (req, res) => {
   Show.findByIdAndRemove(req.params.id, (err, deletedShow) => {
     res.redirect('/shows')
   })
