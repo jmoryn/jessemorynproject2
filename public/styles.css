@@ -61,6 +61,21 @@ h1 {
     width: 100%;
     max-width: 500px;
 }
+.show-form {
+    color: var(--five);
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--five);
+}
+input:focus {
+  outline: 0;
+  border: 1px solid var(--three);
+}
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {

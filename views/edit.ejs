@@ -9,7 +9,7 @@
     <body>
         <div class="container">
             <h1>Edit Show</h1>
-            <form action="/shows/<%-show.id%>?_method=PUT" method="POST">
+            <form class="show-form" action="/shows/<%-show.id%>?_method=PUT" method="POST">
                 Name: <input type="text" name="name" value="<%=show.name%>"/><br/>
                 Location: <input type="text" name="location" value="<%=show.location%>"/><br/>
                 Time: <input type="datetime-local" name="time" value="<%=show.time%>"/><br/>
