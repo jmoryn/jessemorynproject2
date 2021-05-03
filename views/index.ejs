@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>GoTo&#8658;Show</h1>
+            <h1>GoTo&#8594;Show</h1>
 
             <ul>
                 <% if (currentUser) { %>
@@ -30,9 +30,9 @@
                 <% for (let i = 0; i < shows.length; i++){ %>
                     <div class="home-show">
                         <a href="/shows/<%=shows[i].id%>"><img class="home-img" src='<%=shows[i].image%>'></a>
-                        <h3><a href="/shows/<%=shows[i].id%>">
+                        <h4><a href="/shows/<%=shows[i].id%>">
                             <%=shows[i].name%>
-                        </a></h3>
+                        </a></h4>
                         <%=shows[i].location%>
                         <%=shows[i].date%>
                         $<%=shows[i].price%>

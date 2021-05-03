@@ -43,15 +43,22 @@ body {
     background-color: #121212;
 }
 h1 {
-    color: var(--six);
+    color: var(--three);
 }
 
 .home-show {
     width: 85%;
-    color: var(--three);
+    color: var(--five);
+    margin: 20px auto;
+    border: 1px solid var(--five);
+    border-radius: 5px;
+    padding: 5px;
+}
+.home-show a {
+    color: var(--four);
 }
 .home-img {
-    width: 80%;
+    width: 100%;
     max-width: 500px;
 }
 /* Grid
