@@ -10,17 +10,17 @@
         <div class="container">
             <h1>GoTo&#8594;Show</h1>
             <div class="home-show">
-
-            <img class="home-img" src='<%=show.image%>'>
-            <h2><%=show.name%></h2>
-            <%=show.location%>
-            <%=show.date%>
-            <%=show.time%>
-            $<%=show.price%>
-            <%=show.description%>
+                <img class="home-img" src='<%=show.image%>'>
+                <h2><%=show.name%></h2>
+                <%=show.location%>
+                <%=show.date%>
+                <%=show.time%>
+                $<%=show.price%>
+                <br/>
+                <%=show.description%>
             </div>
             <a href="/shows/<%=show.id%>/edit"><button type="submit">Edit</button></a>
-            <form action="/shows/<%=show._id%>?_method=DELETE" method="POST">
+            <form class="delete" action="/shows/<%=show._id%>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete"/>
             </form>
             <a href="/shows"><button type="submit">Back to Home</button></a>

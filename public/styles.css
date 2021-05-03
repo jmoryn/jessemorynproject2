@@ -76,6 +76,12 @@ input:focus {
   outline: 0;
   border: 1px solid var(--three);
 }
+
+.delete input[type="submit"] {
+    height: 38px;
+    width: auto;
+    padding: 0 30px;
+}
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
