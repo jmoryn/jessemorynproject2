@@ -39,15 +39,20 @@ Color Palette found at: https://uxdesign.cc/dark-mode-ui-design-the-definitive-g
   --nine: #212121;
 }
 
-/* body {
+body {
     background-color: #121212;
-} */
+}
+h1 {
+    color: var(--six);
+}
 
 .home-show {
     width: 85%;
+    color: var(--three);
 }
 .home-img {
     width: 80%;
+    max-width: 500px;
 }
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
