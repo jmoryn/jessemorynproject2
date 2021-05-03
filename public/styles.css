@@ -10,6 +10,7 @@
 
 /* Table of contents
 ––––––––––––––––––––––––––––––––––––––––––––––––––
+- Jesse Moryn's Changes
 - Grid
 - Base Styles
 - Typography
@@ -24,7 +25,9 @@
 - Clearing
 - Media Queries
 
-Color Palette found at: https://uxdesign.cc/dark-mode-ui-design-the-definitive-guide-part-1-color-53dcfaea5129
+Jesse Moryn's Changes:
+––––––––––––––––––––––––––––––––––––––––––––––––––
+JM Note: Color Palette found at: https://uxdesign.cc/dark-mode-ui-design-the-definitive-guide-part-1-color-53dcfaea5129
 */
 :root {
   --zero: #fafafa;
