@@ -10,13 +10,13 @@
         <div class="container">
             <h1>Edit Show</h1>
             <form class="show-form" action="/shows/<%-show.id%>?_method=PUT" method="POST">
-                Name: <input type="text" name="name" value="<%=show.name%>"/><br/>
-                Location: <input type="text" name="location" value="<%=show.location%>"/><br/>
-                Date: <input type="date" name="date" value="<%=show.date%>"/><br/>
-                Time: <input type="time" name="time" value="<%=show.time%>"/><br/>
-                Price: <input type="number" name="price" value="<%=show.price%>"/><br/>
-                Description: <input type="text" name="description" value="<%=show.description%>"/><br/>
-                Image Link: <input type="text" name="image" value="<%=show.image%>"/><br/>
+                Name: <br/><input type="text" name="name" value="<%=show.name%>"/><br/>
+                Location: <br/><input type="text" name="location" value="<%=show.location%>"/><br/>
+                Date: <br/><input type="date" name="date" value="<%=show.date%>"/><br/>
+                Time: <br/><input type="time" name="time" value="<%=show.time%>"/><br/>
+                Price: <br/><input type="number" name="price" value="<%=show.price%>"/><br/>
+                Description: <br/><input type="text" name="description" value="<%=show.description%>"/><br/>
+                Image Link: <br/><input type="text" name="image" value="<%=show.image%>"/><br/>
                 <input type="submit" value="Submit Changes"/>
             </form>
             <button type="button">
