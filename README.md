@@ -24,4 +24,5 @@ Being relatively new to forms, I also struggled a few times with form validation
 <li>Add google maps to show pages that pins the venue for the show</li>
 <li>Sort shows by price, date (soonest first), Venue and more</li>
 <li>Add email to user data to allow for marketing or notifications</li>
+<li>Add location search for different cities</li>
 </ul>
