@@ -9,7 +9,7 @@
     <body>
         <div class="container">
             <h1>GoToShow</h1>
-            <a href="/shows/new"><button type="submit">Add a Show</button></a>
+
             <ul>
                 <% if (currentUser) { %>
                     <li>Welcome, <%= currentUser.username %>!</li>
@@ -19,22 +19,24 @@
                         </form>
                     </li>
                 <% } else { %>
-                    <li><a href="/users/new">Sign Up</a> </li>
-                    <li><a href="/sessions/new">Log In</a> </li>
+                    <a href="/users/new"><button type="submit">Sign Up</button></a>
+                    <a href="/sessions/new"><button type="submit">Log In</button></a>
                 <% } %>
-
+                <br/>
+                <a href="/shows/new"><button type="submit">Add a Show</button></a>
                 <!-- display newest show first -->
                 <%shows.reverse()%>
                 <!-- loop to display show info on index -->
                 <% for (let i = 0; i < shows.length; i++){ %>
-                    <li>
-                        <a href="/shows/<%=shows[i].id%>">
+                    <div class="home-show">
+                        <a href="/shows/<%=shows[i].id%>"><img class="home-img" src='<%=shows[i].image%>'></a>
+                        <h3><a href="/shows/<%=shows[i].id%>">
                             <%=shows[i].name%>
-                        </a>
+                        </a></h3>
                         <%=shows[i].location%>
-                        <%=shows[i].time%>
+                        <%=shows[i].date%>
                         $<%=shows[i].price%>
-                    </li>
+                    </div>
                  <% } %>
             </ul>
         </div>

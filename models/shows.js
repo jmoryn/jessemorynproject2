@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const showSchema = new mongoose.Schema({
     name: {type: String, required: true},
     location: {type: String, required: true},
+    date: {type: String, required: true},
     time: {type: String, required: true},
     price: {type: Number, min: 0, required: true},
     description: String,
