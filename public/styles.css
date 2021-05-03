@@ -55,6 +55,7 @@ h4 {
     border: 1px solid var(--five);
     border-radius: 5px;
     padding: 5px;
+    max-width: 500px;
 }
 .home-show a {
     color: var(--four);
